@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  linuxlab:
+    image: pratikmule127/linuxlab-online:latest
+    container_name: linuxlab
+    ports:
+      - "7681:7681"
+    restart: unless-stopped
