@@ -159,6 +159,59 @@ fast:
 - Production-like performance
 
 ------------------------------------------------------------
+------------------------------------------------------------
+
+# 🛠 Build Docker Images From Source
+
+If you cloned this repository and want to build the images locally instead of pulling from Docker Hub, follow the steps below.
+
+------------------------------------------------------------
+
+## 🔹 Build Version 1 (Initial Setup Version)
+
+Navigate to the v1 directory:
+
+cd linuxlab-online-v1
+
+Build the image:
+
+docker build -t linuxlab-online:v1 .
+
+Verify image:
+
+docker images
+
+------------------------------------------------------------
+
+## 🔹 Build Fast Version (Optimized Version)
+
+Navigate to the fast directory:
+
+cd linuxlab-online-fast
+
+Build the image:
+
+docker build -t linuxlab-online:fast .
+
+Verify image:
+
+docker images
+
+------------------------------------------------------------
+
+## 🔹 (Optional) Tag for Docker Hub
+
+If you want to push the image to Docker Hub, tag it using your Docker Hub username:
+
+docker tag linuxlab-online:v1 <your-dockerhub-username>/linuxlab-online:v1
+docker tag linuxlab-online:fast <your-dockerhub-username>/linuxlab-online:fast
+
+Then push:
+
+docker push <your-dockerhub-username>/linuxlab-online:v1
+docker push <your-dockerhub-username>/linuxlab-online:fast
+
+------------------------------------------------------------
 
 # ▶ How To Run The Lab
 
