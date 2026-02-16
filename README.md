@@ -159,44 +159,20 @@ fast:
 - Production-like performance
 
 ------------------------------------------------------------
-------------------------------------------------------------
 
-⚙ Prerequisites
-   (Manual Docker check steps)
+## 🧪 Automated Prerequisite Check
 
-   Docker Installed
-   Docker Service
-   Docker Group
-   Port 7681
-------------------------------------------------------------
+You can automatically verify system requirements before building or running the container using the included script.
 
-## 🧪 Automated Prerequisite Check Script
+### Script Location
+`check_prerequisites.sh`
 
-Instead of manually verifying all requirements, you can use the included script to automatically check system readiness.
+### Run the Script
 
-### 📂 Script Location
-
-check_prerequisites.sh
-
-### ▶ How to Run
-
-Make it executable:
-
+```bash
 chmod +x check_prerequisites.sh
-
-Run it:
-
 ./check_prerequisites.sh
-
-This script checks:
-
-- Docker installation
-- Docker service status
-- Docker group permissions
-- Port 7681 availability
-
 ------------------------------------------------------------
-
 
 ------------------------------------------------------------
 
