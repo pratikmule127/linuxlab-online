@@ -1,4 +1,9 @@
 # LinuxLab-Online 🚀
+![Docker Pulls](https://img.shields.io/docker/pulls/pratikmule127/linuxlab-online)
+![Docker Image Size](https://img.shields.io/docker/image-size/pratikmule127/linuxlab-online/fast)
+![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Platform](https://img.shields.io/badge/platform-Docker-blue)
+![Status](https://img.shields.io/badge/status-Active-brightgreen)
 
 LinuxLab-Online is a lightweight, container-based Linux lab environment designed for learning, testing, and DevOps practice.
 
