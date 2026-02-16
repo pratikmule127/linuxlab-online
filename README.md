@@ -161,6 +161,61 @@ fast:
 ------------------------------------------------------------
 ------------------------------------------------------------
 
+# ⚙ Prerequisites
+
+Before running LinuxLab-Online, make sure your server or system has the following installed:
+
+## 1️⃣ Docker Installed
+
+Docker must be installed and running on the server.
+
+Check Docker version:
+
+docker --version
+
+If Docker is not installed, install it from:
+https://docs.docker.com/get-docker/
+
+After installation, verify Docker service:
+
+sudo systemctl status docker
+
+------------------------------------------------------------
+
+## 2️⃣ Docker Permissions
+
+You should have permission to run Docker commands.
+
+If needed, add your user to Docker group:
+
+sudo usermod -aG docker $USER
+
+Then log out and log back in.
+
+------------------------------------------------------------
+
+## 3️⃣ Open Port 7681
+
+Make sure port 7681 is open on your server firewall.
+
+Example (Ubuntu with UFW):
+
+sudo ufw allow 7681
+
+------------------------------------------------------------
+
+## 4️⃣ Linux-Based Server Recommended
+
+Recommended environments:
+
+- Ubuntu Server
+- Debian
+- CentOS
+- Any Linux distribution supporting Docker
+
+------------------------------------------------------------
+------------------------------------------------------------
+
 # 🛠 Build Docker Images From Source
 
 If you cloned this repository and want to build the images locally instead of pulling from Docker Hub, follow the steps below.
