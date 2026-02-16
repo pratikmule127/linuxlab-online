@@ -6,7 +6,29 @@
 ![Status](https://img.shields.io/badge/status-Active-brightgreen)
 
 LinuxLab-Online is a lightweight, container-based Linux lab environment designed for learning, testing, and DevOps practice.
+---
 
+## 📥 Clone the Repository
+
+If you are new to Git, follow these steps to download the project:
+
+### 1️⃣ Copy the Repository URL
+
+Go to the GitHub repository page and click the green **Code** button.  
+Copy the HTTPS URL.
+
+Example:
+https://github.com/pratikmule127/linuxlab-online.git
+
+### 2️⃣ Open Terminal
+
+Navigate to the directory where you want to download the project.
+
+### 3️⃣ Run the Clone Command
+
+```bash
+git clone https://github.com/pratikmule127/linuxlab-online.git
+------------------------------------------------------------
 This project provides two versions of the lab environment:
 
 1. linuxlab-online:v1 (Initial Setup Version)
