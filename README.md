@@ -33,20 +33,69 @@ docker pull pratikmule127/linuxlab-online:fast
 
 ------------------------------------------------------------
 
-# 🏗 Project Structure
+# 🏗 Architecture Diagram
 
-linux-online/
+LinuxLab-Online provides a browser-based Linux lab environment using ttyd (web terminal) inside a Docker container.
 
-├── linuxlab-online-v1/
-│   ├── Dockerfile
-│   ├── lab.sh
-│   ├── setup_OS.sh
-│   └── start.sh
-│
-└── linuxlab-online-fast/
-    ├── Dockerfile
-    ├── lab.sh
-    └── start.sh
+The user accesses the lab via browser, which connects to ttyd running inside the container.  
+Inside the container, Docker is used to manage multiple OS lab environments.
+
+------------------------------------------------------------
+
+                ┌──────────────────────────────┐
+                │           User               │
+                │         (Browser)            │
+                │   http://server:7681         │
+                └──────────────┬───────────────┘
+                               │
+                               ▼
+                ┌──────────────────────────────┐
+                │            ttyd              │
+                │   Web Terminal Interface     │
+                │  (Running inside container)  │
+                └──────────────┬───────────────┘
+                               │
+                               ▼
+        ┌──────────────────────────────────────────┐
+        │      LinuxLab Docker Container           │
+        │   (v1 or fast image version)             │
+        │                                          │
+        │   - lab.sh                               │
+        │   - start.sh                             │
+        │   - setup_OS.sh (v1 only)                │
+        │                                          │
+        │   Docker Engine (via docker.sock)       │
+        └──────────────┬──────────────────────────┘
+                       │
+                       ▼
+        ┌──────────────────────────────────────────┐
+        │      Multiple OS Lab Environments        │
+        │   (Ubuntu, Debian, Alpine, etc.)        │
+        └──────────────────────────────────────────┘
+## How It Works
+
+1. User opens browser and connects to port 7681.
+2. Browser loads ttyd web terminal interface.
+3. ttyd runs inside the LinuxLab container.
+4. The container has access to Docker (via docker.sock or privileged mode).
+5. User can start and manage different OS lab environments.
+6. In v1, setup_OS.sh prepares the OS during first startup.
+7. In fast version, OS is already prepared for quicker access.
+## Security Model
+
+Recommended method:
+
+docker run -v /var/run/docker.sock:/var/run/docker.sock
+
+This provides controlled Docker access without full privileged mode.
+
+Alternative method:
+
+docker run --privileged
+
+This gives extended container permissions but is less secure.
+Use only if required.
+
 
 ------------------------------------------------------------
 
