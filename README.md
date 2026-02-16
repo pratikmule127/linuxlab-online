@@ -161,24 +161,42 @@ fast:
 ------------------------------------------------------------
 ------------------------------------------------------------
 
-# ⚙ Prerequisites
+⚙ Prerequisites
+   (Manual Docker check steps)
 
-Before running LinuxLab-Online, make sure your server or system has the following installed:
+   Docker Installed
+   Docker Service
+   Docker Group
+   Port 7681
+------------------------------------------------------------
 
-## 1️⃣ Docker Installed
+## 🧪 Automated Prerequisite Check Script
 
-Docker must be installed and running on the server.
+Instead of manually verifying all requirements, you can use the included script to automatically check system readiness.
 
-Check Docker version:
+### 📂 Script Location
 
-docker --version
+check_prerequisites.sh
 
-If Docker is not installed, install it from:
-https://docs.docker.com/get-docker/
+### ▶ How to Run
 
-After installation, verify Docker service:
+Make it executable:
 
-sudo systemctl status docker
+chmod +x check_prerequisites.sh
+
+Run it:
+
+./check_prerequisites.sh
+
+This script checks:
+
+- Docker installation
+- Docker service status
+- Docker group permissions
+- Port 7681 availability
+
+------------------------------------------------------------
+
 
 ------------------------------------------------------------
 
