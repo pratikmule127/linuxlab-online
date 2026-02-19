@@ -6,7 +6,7 @@ LABEL AUTHOR="Pratik Mule"
 
 WORKDIR /usr/local/bin/
 
-COPY lab.sh start.sh  .
+COPY lab.sh start.sh  /usr/local/bin/
 
 RUN chmod +x lab.sh start.sh
 
